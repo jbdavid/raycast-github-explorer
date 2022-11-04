@@ -1,4 +1,4 @@
-import { Action, ActionPanel, Detail, List } from "@raycast/api";
+import { Action, ActionPanel, Detail, Image, List } from "@raycast/api";
 import { useEffect, useState } from "react";
 import { fetchAllPRs } from "./api";
 import { PR } from "./types";
@@ -33,6 +33,8 @@ export default function BrowseAllPRs() {
           <List.Item
             key={pr.id}
             title={pr.title}
+            icon={{ source: pr.user.avatar_url, mask: Image.Mask.Circle }}
+            accessories={[{ text: pr.user.login }]}
             actions={
               <ActionPanel>
                 <Action.OpenInBrowser title="Open in browser" url={pr.html_url} />

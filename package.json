@@ -15,12 +15,6 @@
       "title": "Browse all PRs",
       "description": "Browse all PRs in the repo",
       "mode": "view"
-    },
-    {
-      "name": "browse-my-prs",
-      "title": "Browse my PRs",
-      "description": "Browser my PRs in the repo",
-      "mode": "view"
     }
   ],
   "dependencies": {
