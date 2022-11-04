@@ -1,7 +1,8 @@
 import fetch from "node-fetch";
 import { getPreferenceValues } from "@raycast/api";
+import { PR } from "./types";
 
-export async function fetchAllPRs(): Promise<Array<any>> {
+export async function fetchAllPRs(): Promise<Array<PR>> {
   const { repoOwner, repoName, repoSshKey } = getPreferenceValues();
 
   const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/pulls`, {
@@ -19,5 +20,5 @@ export async function fetchAllPRs(): Promise<Array<any>> {
     throw errInfo;
   }
 
-  return (await responseJson) as Array<any>;
+  return (await responseJson) as Array<PR>;
 }
