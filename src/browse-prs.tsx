@@ -11,13 +11,13 @@ export default function BrowseAllPRs() {
     setIsLoading(true);
     fetchAllPRs()
       .then((result) => {
-        console.debug(result);
-        setIsLoading(false);
         setResult(result);
       })
       .catch((error) => {
-        setIsLoading(false);
         console.error(error);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   }, []);
 
@@ -27,22 +27,19 @@ export default function BrowseAllPRs() {
 
   return (
     <List isLoading={isLoading}>
-      {result.map((pr) => {
-        console.debug(pr);
-        return (
-          <List.Item
-            key={pr.id}
-            title={pr.title}
-            icon={{ source: pr.user.avatar_url, mask: Image.Mask.Circle }}
-            accessories={[{ text: pr.user.login }]}
-            actions={
-              <ActionPanel>
-                <Action.OpenInBrowser title="Open in browser" url={pr.html_url} />
-              </ActionPanel>
-            }
-          />
-        );
-      })}
+      {result.map((pr) => (
+        <List.Item
+          key={pr.id}
+          title={pr.title}
+          icon={{ source: pr.user.avatar_url, mask: Image.Mask.Circle }}
+          accessories={[{ text: pr.user.login }]}
+          actions={
+            <ActionPanel>
+              <Action.OpenInBrowser title="Open in browser" url={pr.html_url} />
+            </ActionPanel>
+          }
+        />
+      ))}
     </List>
   );
 }

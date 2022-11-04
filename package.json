@@ -11,7 +11,7 @@
   "license": "MIT",
   "commands": [
     {
-      "name": "browse-all-prs",
+      "name": "browse-prs",
       "title": "Browse Pull Requests",
       "subtitle": "Github Repository Explorer",
       "description": "Browse all PRs of the repository",
