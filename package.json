@@ -1,0 +1,73 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "github-repo-explorer",
+  "title": "Github repo explorer",
+  "description": "Browse you repo and quickly walk through its PRs",
+  "icon": "command-icon.png",
+  "author": "jeanbdavid",
+  "categories": [
+    "Developer Tools"
+  ],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "browse-all-prs",
+      "title": "Browse all PRs",
+      "description": "Browse all PRs in the repo",
+      "mode": "view"
+    },
+    {
+      "name": "browse-my-prs",
+      "title": "Browse my PRs",
+      "description": "Browser my PRs in the repo",
+      "mode": "view"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.42.2",
+    "node-fetch": "^3.2.10"
+  },
+  "devDependencies": {
+    "@types/node": "18.8.3",
+    "@types/react": "18.0.9",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.5.1",
+    "typescript": "^4.4.3"
+  },
+  "preferences": [
+    {
+      "name": "repoOwner",
+      "title": "Repository owner",
+      "description": "The owner of the repository you want to browse",
+      "type": "textfield",
+      "default": "",
+      "required": true
+    },
+    {
+      "name": "repoName",
+      "title": "Repository name",
+      "description": "The Github repository you want to browse",
+      "type": "textfield",
+      "default": "",
+      "required": true
+    },
+    {
+      "name": "repoSshKey",
+      "title": "Repository SSH Key",
+      "description": "The SSH Key associated with your account for the repository",
+      "type": "password",
+      "default": "",
+      "required": true
+    }
+  ],
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "ray publish"
+  }
+}
