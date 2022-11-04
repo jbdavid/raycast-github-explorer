@@ -3,7 +3,7 @@
   "name": "github-repository-explorer",
   "title": "Github Pull Requests Explorer",
   "description": "Browse your repository's pull requests and quickly open them in your browser",
-  "icon": "command-icon.png",
+  "icon": "github_explorer_icon.png",
   "author": "jeanbdavid",
   "categories": [
     "Developer Tools"
