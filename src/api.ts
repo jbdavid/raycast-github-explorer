@@ -3,12 +3,12 @@ import { getPreferenceValues } from "@raycast/api";
 import { PR } from "./types";
 
 export async function fetchAllPRs(): Promise<Array<PR>> {
-  const { repoOwner, repoName, repoSshKey } = getPreferenceValues();
+  const { repoOwner, repoName, token } = getPreferenceValues();
 
   const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/pulls`, {
     method: "GET",
     headers: {
-      Authorization: `Bearer ${repoSshKey}`,
+      Authorization: `Bearer ${token}`,
       Accept: "application/vnd.github+json",
     },
   });

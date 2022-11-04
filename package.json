@@ -1,8 +1,8 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
-  "name": "github-repo-explorer",
-  "title": "Github repo explorer",
-  "description": "Browse you repo and quickly walk through its PRs",
+  "name": "github-repository-explorer",
+  "title": "Github Pull Requests Explorer",
+  "description": "Browse your repository's pull requests and quickly open them in your browser",
   "icon": "command-icon.png",
   "author": "jeanbdavid",
   "categories": [
@@ -12,8 +12,9 @@
   "commands": [
     {
       "name": "browse-all-prs",
-      "title": "Browse all PRs",
-      "description": "Browse all PRs in the repo",
+      "title": "Browse Pull Requests",
+      "subtitle": "Github Repository Explorer",
+      "description": "Browse all PRs of the repository",
       "mode": "view"
     }
   ],
@@ -49,9 +50,9 @@
       "required": true
     },
     {
-      "name": "repoSshKey",
-      "title": "Repository SSH Key",
-      "description": "The SSH Key associated with your account for the repository",
+      "name": "token",
+      "title": "Token",
+      "description": "Github personal access token",
       "type": "password",
       "default": "",
       "required": true
